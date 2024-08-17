@@ -12,7 +12,7 @@ import {
   ContainerListBlobsOptions,
   RestError,
 } from '@azure/storage-blob';
-import { AzureBlobConfiguration } from './interfaces/azure-blob-configuration.interface';
+import { AzureBlobOptions } from './interfaces/azure-blob-options.interface';
 import { Readable } from 'stream';
 import path from 'path';
 import * as fs from 'fs';
@@ -27,7 +27,7 @@ export class AzureBlobAdapterService implements IAzureBlobAdapterService {
 
   constructor(
     @Inject('AZURE_BLOB_CONFIGURATION')
-    private config: AzureBlobConfiguration,
+    private config: AzureBlobOptions,
   ) {
     this.initializeBlobServiceClient(this.config.defaultConnectionString);
   }

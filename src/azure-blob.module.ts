@@ -1,7 +1,7 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 import { AzureBlobAdapterService } from './azure-blob.service';
 import { AzureBlobAsyncOptions } from './interfaces/azure-blob-async-options.interface';
-import { AzureBlobConfiguration } from './interfaces/azure-blob-configuration.interface';
+import { AzureBlobOptions } from './interfaces/azure-blob-options.interface';
 
 @Module({
   // imports: [],
@@ -9,7 +9,7 @@ import { AzureBlobConfiguration } from './interfaces/azure-blob-configuration.in
   // exports: [AzureBlobAdapterService],
 })
 export class AzureBlobModule {
-  static forRoot(config: AzureBlobConfiguration): DynamicModule {
+  static forRoot(config: AzureBlobOptions): DynamicModule {
     const providers = [
       {
         provide: 'AZURE_BLOB_CONFIGURATION',
