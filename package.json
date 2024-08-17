@@ -1,0 +1,50 @@
+{
+  "name": "@keleshteri/azure-blob-nestjs",
+  "version": "1.0.15",
+  "description": "docusign nestjs",
+  "author": {
+    "name": "MMSK Keleshteri",
+    "email": "web.developer.keleshteri@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "MMSK Keleshteri",
+      "email": "web.developer.keleshteri@gmail.com"
+    }
+  ],
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prepublish": "npm run build",
+    "push": "npm run build && npm --no-git-tag-version version patch && git add . && git commit -m \"patch version\" && git push && npm publish --access public"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keleshteri/azure-blob-nestjs.git"
+  },
+  "bugs": "https://github.com/keleshteri/azure-blob-nestjs/issues",
+  "peerDependencies": {
+    "@nestjs/common": "^10.3.7"
+  },
+  "dependencies": {
+    "@azure/storage-blob": "^12.24.0",
+    "@nestjs/common": "^10.3.7",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.5"
+  }
+}
